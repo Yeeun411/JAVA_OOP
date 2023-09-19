@@ -1,6 +1,7 @@
+package Study;
 import java.util.Scanner;
 
-public class Main {
+public class Bronze5_2588 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int A = scanner.nextInt();  // 첫번째 세자리수
