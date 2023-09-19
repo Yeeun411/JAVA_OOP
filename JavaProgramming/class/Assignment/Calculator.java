@@ -1,21 +1,21 @@
 package Assignment;
-
 import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("연산>>> ");
-        String input = scanner.nextLine();
-        String[] tokens = input.split(" ");
-
-        if (tokens.length != 3) {
-            System.out.println("올바른 형식의 입력이 필요합니다.");
-            return;
-        }
-
+        Scanner scanner = null;
         try {
+            scanner = new Scanner(System.in);
+
+            System.out.print("연산>>> ");
+            String input = scanner.nextLine();
+            String[] tokens = input.split(" ");
+
+            if (tokens.length != 3) {
+                System.out.println("올바른 형식의 입력이 필요합니다.");
+                return;
+            }
+
             int operand1 = Integer.parseInt(tokens[0]);
             String operator = tokens[1];
             int operand2 = Integer.parseInt(tokens[2]);
@@ -51,8 +51,11 @@ public class Calculator {
             }
         } catch (NumberFormatException e) {
             System.out.println("올바른 형식의 입력이 필요합니다.");
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
         }
-
-        scanner.close();
     }
 }
+
