@@ -1,0 +1,18 @@
+package Assignment;
+
+class Person{
+	public Person() {
+		System.out.println("Person 객체 생성");
+	}
+}
+class Student extends Person{
+	public Student() {
+		System.out.println("Student 객체 생성");
+	}
+}
+
+public class Ex02_01 {
+	public static void main(String[] args) {
+		Student s = new Student();
+	}
+}
